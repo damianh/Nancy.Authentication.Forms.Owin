@@ -61,7 +61,7 @@
                 yield return header.Select(c =>
                 {
                     var pair = c.Split('=');
-                    return new NancyCookie(pair[0], pair[1]);
+                    return new NancyCookie(pair[0].Trim(), pair[1]);
                 })
                 .SingleOrDefault(c => c.Name == FormsAuthentication.FormsAuthenticationCookieName);
             }
