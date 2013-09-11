@@ -5,6 +5,7 @@
     using System.Linq;
     using Nancy;
     using Nancy.Authentication.Forms;
+    using Nancy.Authentication.Forms.Owin;
     using Nancy.ModelBinding;
     using Owin;
 

@@ -21,7 +21,7 @@
                                                    };
             builder
                 .UseNancyAuth(formsAuthenticationConfiguration, userManager)
-                .UseNancy(new AppBootstrapper(formsAuthenticationConfiguration, userManager));
+                .UseNancy(opt => opt.Bootstrapper = new AppBootstrapper(formsAuthenticationConfiguration, userManager));
         }
     }
 }

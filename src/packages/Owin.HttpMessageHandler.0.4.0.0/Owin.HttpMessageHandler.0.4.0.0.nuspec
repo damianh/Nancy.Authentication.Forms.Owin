@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Owin.HttpMessageHandler</id>
+    <version>0.4.0.0</version>
+    <authors>Damian Hickey</authors>
+    <owners>Damian Hickey</owners>
+    <projectUrl>https://github.com/damianh/Owin.HttpMessageHandler</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>An implementation of HttpMessageHandler for use with HttpClient that invokes direct requests against an OWIN application. Useful for testing and embedded scenarios.</description>
+    <tags>owin httpclient</tags>
+    <dependencies>
+      <group />
+      <group targetFramework=".NETPortable0.0-net40+sl40+win80+wp71">
+        <dependency id="Microsoft.Net.Http" version="[2.1, 3.0)" />
+      </group>
+      <group targetFramework=".NETPortable0.0-net45+win80" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Net.Http" targetFramework=".NETPortable0.0-net45+win8" />
+    </frameworkAssemblies>
+  </metadata>
+</package>

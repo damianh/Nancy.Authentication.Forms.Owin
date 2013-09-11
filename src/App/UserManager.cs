@@ -1,14 +1,16 @@
-﻿namespace Owin
+﻿namespace App
 {
     using System;
     using System.Collections.Generic;
     using System.Security.Claims;
     using System.Security.Principal;
+    using System.Threading.Tasks;
     using Nancy;
     using Nancy.Authentication.Forms;
+    using Nancy.Authentication.Forms.Owin;
     using Nancy.Security;
 
-    public class UserManager : IUserMapper, IUserManager
+    public class UserManager : IUserMapper, IUserManager, IClaimsPrincipalLookup
     {
         private readonly Dictionary<string, User> _usersByUserName = new Dictionary<string, User>();
         private readonly Dictionary<Guid, User> _usersById = new Dictionary<Guid, User>();
@@ -37,10 +39,10 @@
             return true;
         }
 
-        public ClaimsPrincipal GetClaimsPrincial(Guid identifier)
+        public Task<ClaimsPrincipal> GetClaimsPrincial(Guid identifier)
         {
             var user = _usersById[identifier];
-            return new ClaimsPrincipal(new GenericIdentity(user.UserName));
+            return Task.FromResult(new ClaimsPrincipal(new GenericIdentity(user.UserName)));
         }
 
         private class User : IUserIdentity
