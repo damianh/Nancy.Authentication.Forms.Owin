@@ -47,9 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IClaimsPrincipalLookup.cs" />
-    <Compile Include="NancyAuthMiddewareExtensions.cs" />
-    <Compile Include="NancyAuthMiddleware.cs" />
-    <Compile Include="NancyModuleExtensions.cs" />
+    <Compile Include="AppBuilderExtensions.cs" />
+    <Compile Include="NancyFormsAuthMiddleware.cs" />
+    <Compile Include="NancyContextExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

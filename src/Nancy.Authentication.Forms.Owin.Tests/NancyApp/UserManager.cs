@@ -1,11 +1,10 @@
-﻿namespace App
+﻿namespace Nancy.Authenticaton.Forms.Owin.NancyApp
 {
     using System;
     using System.Collections.Generic;
     using System.Security.Claims;
     using System.Security.Principal;
     using System.Threading.Tasks;
-    using Nancy;
     using Nancy.Authentication.Forms;
     using Nancy.Authentication.Forms.Owin;
     using Nancy.Security;

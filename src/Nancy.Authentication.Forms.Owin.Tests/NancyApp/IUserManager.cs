@@ -1,4 +1,4 @@
-﻿namespace App
+﻿namespace Nancy.Authenticaton.Forms.Owin.NancyApp
 {
     using System;
 

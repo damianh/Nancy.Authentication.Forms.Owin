@@ -1,11 +1,12 @@
-﻿namespace App.Tests
+﻿namespace Nancy.Authenticaton.Forms.Owin
 {
     using System.Collections.Generic;
     using System.Net;
     using System.Net.Http;
     using System.Threading.Tasks;
-    using Owin;
-    using Owin.Testing;
+    using global::Owin;
+    using global::Owin.Testing;
+    using Nancy.Authenticaton.Forms.Owin.NancyApp;
     using Xunit;
 
     public class NancyAuthMiddlewareTests

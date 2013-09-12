@@ -1,15 +1,16 @@
-﻿namespace Nancy.Authentication.Forms.Owin
+﻿// ReSharper disable once CheckNamespace
+namespace Nancy
 {
     using System.Collections.Generic;
     using System.Security.Claims;
 
-    public static class NancyModuleExtensions
+    public static class NancyContextExtensions
     {
         private const string ServerUser = "server.User";
 
-        public static ClaimsPrincipal GetClaimsPrincipal(this INancyModule module)
+        public static ClaimsPrincipal GetClaimsPrincipal(this NancyContext context)
         {
-            var environment = module.Context.Items[Nancy.Owin.NancyOwinHost.RequestEnvironmentKey] as IDictionary<string, object>;
+            var environment = context.Items[Nancy.Owin.NancyOwinHost.RequestEnvironmentKey] as IDictionary<string, object>;
             if (environment == null || !environment.ContainsKey(ServerUser))
             {
                 return null;

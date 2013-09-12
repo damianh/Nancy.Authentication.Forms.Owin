@@ -7,14 +7,14 @@
     using System.Threading.Tasks;
     using Nancy.Cookies;
 
-    public class NancyAuthMiddleware
+    public class NancyFormsAuthMiddleware
     {
         private const string ServerUser = "server.User";
         private readonly IClaimsPrincipalLookup _claimsPrincipalLookup;
         private readonly FormsAuthenticationConfiguration _formsAuthenticationConfiguration;
         private readonly Func<IDictionary<string, object>, Task> _next;
 
-        public NancyAuthMiddleware(Func<IDictionary<string, object>, Task> next,
+        public NancyFormsAuthMiddleware(Func<IDictionary<string, object>, Task> next,
             FormsAuthenticationConfiguration formsAuthenticationConfiguration,
             IClaimsPrincipalLookup claimsPrincipalLookup)
         {

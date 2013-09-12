@@ -1,13 +1,10 @@
-﻿namespace App
+﻿namespace Nancy.Authenticaton.Forms.Owin.NancyApp
 {
     using System;
     using System.Globalization;
     using System.Linq;
-    using Nancy;
     using Nancy.Authentication.Forms;
-    using Nancy.Authentication.Forms.Owin;
     using Nancy.ModelBinding;
-    using Owin;
 
     public class AppModule : NancyModule
     {
@@ -15,7 +12,7 @@
         {
             Get["/getclaimscount"] = _ =>
                                      {
-                                         var claimsPrincipal = this.GetClaimsPrincipal();
+                                         var claimsPrincipal = Context.GetClaimsPrincipal();
                                          if (claimsPrincipal == null)
                                          {
                                              return HttpStatusCode.Unauthorized;

@@ -1,8 +1,8 @@
-﻿namespace App
+﻿namespace Nancy.Authenticaton.Forms.Owin.NancyApp
 {
+    using global::Owin;
     using Nancy.Authentication.Forms;
     using Nancy.Cryptography;
-    using Owin;
 
     public class Startup
     {

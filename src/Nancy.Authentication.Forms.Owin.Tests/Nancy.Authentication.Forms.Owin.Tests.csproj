@@ -7,8 +7,8 @@
     <ProjectGuid>{A8EA0208-C537-45E7-9468-5085526951F2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>App.Tests</RootNamespace>
-    <AssemblyName>App.Tests</AssemblyName>
+    <RootNamespace>Nancy.Authenticaton.Forms.Owin</RootNamespace>
+    <AssemblyName>Nancy.Authenticaton.Forms.Owin.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -33,6 +33,18 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Nancy, Version=0.20.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Nancy.0.20.0\lib\net40\Nancy.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.Authentication.Forms, Version=0.20.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Nancy.Authentication.Forms.0.20.0\lib\net40\Nancy.Authentication.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.Owin, Version=0.20.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Nancy.Owin.0.20.0\lib\net40\Nancy.Owin.dll</HintPath>
+    </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
@@ -54,6 +66,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NancyApp\AppBootstrapper.cs" />
+    <Compile Include="NancyApp\AppModule.cs" />
+    <Compile Include="NancyApp\IUserManager.cs" />
+    <Compile Include="NancyApp\Startup.cs" />
+    <Compile Include="NancyApp\UserManager.cs" />
     <Compile Include="NancyAuthMiddlewareTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -61,11 +78,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\App\App.csproj">
-      <Project>{0CD0B483-0C21-4D34-99EB-4B31BF9C0263}</Project>
-      <Name>App</Name>
+    <ProjectReference Include="..\Nancy.Authentication.Forms.Owin\Nancy.Authentication.Forms.Owin.csproj">
+      <Project>{f7928b9e-4012-4a05-be83-aad938cec542}</Project>
+      <Name>Nancy.Authentication.Forms.Owin</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,10 +1,8 @@
-﻿namespace App
+﻿namespace Nancy.Authenticaton.Forms.Owin.NancyApp
 {
-    using Nancy;
     using Nancy.Authentication.Forms;
     using Nancy.Bootstrapper;
     using Nancy.TinyIoc;
-    using Owin;
 
     public class AppBootstrapper : DefaultNancyBootstrapper
     {
